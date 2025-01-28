@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luisa Rosa Locher</title>
+<style>
+h1{
+    font-family: cursive;
+    color: black;
+    font-size: 68px;
+    font-style: italic;
+    -webkit-text-stroke-width: 0.03px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-style: italic;
+    filter: blur(0.3px);
+    position: relative;
+    left: 30px;
+    top: -40px;
+}
+
+h2{
+    font-family: cursive;
+    color: black;
+    font-size: 56px;
+    font-style: italic;
+    -webkit-text-stroke-width: 0.05px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-style: italic;
+    filter: blur(0.3px);
+    left: 300px;
+    position: relative;
+    left: 30px;
+    top: 40px;
+}
+
+.accordion {
+    width: 300px;
+}
+
+.accordion-item {
+    width: 300px;
+}
+
+.accordion-header {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(229, 229, 229);
+    color: blue;
+    padding: 8px;
+    border-color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgb(64, 64, 64);
+    position: relative;
+    left: 30px;
+    margin-bottom: 15px
+}
+
+.accordion-header:hover {
+    color: red;
+}
+
+.accordion-content {
+    display: none;
+    padding: 20px;
+}
+
+.dropdown-image {
+    width: 625px;
+    margin-left: 415.5px;
+    position: relative;
+}
+
+#showmore-button1 {
+
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+color: black;
+padding: 6px;
+background-color:rgb(229, 229, 229);
+border-radius: 5px;
+border-color: white;
+position: relative;
+margin-left: 30px;
+cursor: pointer;
+}
+
+#showmore-button1:hover {
+    color: red;
+}
+
+#showmore-button2 {
+
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+color: black;
+padding: 6px;
+background-color:rgb(229, 229, 229);
+border-radius: 5px;
+border-color: white;
+position: relative;
+margin-left: 30px;
+cursor: pointer;
+}
+
+#showmore-button2:hover {
+    color: red;
+}
+
+#showmore-button3 {
+
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+color: black;
+padding: 6px;
+background-color:rgb(229, 229, 229);
+border-radius: 5px;
+border-color: white;
+position: relative;
+margin-left: 30px;
+cursor: pointer;
+}
+
+#showmore-button3:hover {
+    color: red;
+}
+
+#showmore-button4 {
+
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+color: black;
+padding: 6px;
+background-color:rgb(229, 229, 229);
+border-radius: 5px;
+border-color: white;
+position: relative;
+margin-left: 30px;
+cursor: pointer;
+}
+
+#showmore-button4:hover {
+    color: red;
+}
+
+#showmore-button5 {
+
+font-size: 14px;
+font-family: Arial, Helvetica, sans-serif;
+color: black;
+padding: 6px;
+background-color:rgb(229, 229, 229);
+border-radius: 5px;
+border-color: white;
+position: relative;
+margin-left: 30px;
+cursor: pointer;
+}
+
+#showmore-button5:hover {
+    color: red;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(170, 170, 170);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: rgb(89, 89, 89);
+    font-size: 16px;
+    text-align: justify;
+    padding-left: 30px;
+    width: 287px;
+}
+
+.footer{
+    font-family: Arial, Helvetica, sans-serif;
+     color: rgb(170, 170, 170);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: rgb(89, 89, 89);
+    font-size: 16px;
+    position: relative;
+    top: 160px;
+    padding-left: 30px;
+    padding-bottom: 23px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 50%;
+    max-width: 900px;
+    padding: 60px;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(89, 89, 89);
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: white;
+    text-shadow: 0 0 5px rgb(89, 89, 89);
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+.slide img {
+    height: 500px;
+    position: relative;
+    text-align: center;
+}
+.prev, .next {
+    cursor: pointer;
+    position: fixed;
+    top: 45%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(200, 200, 200);
+    border-radius: 5px;
+    user-select: none;
+}
+
+.prev {
+    left: 25px;
+}
+
+.next {
+    right: 25px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgb(89, 89, 89);
+}
+
+.numbertext {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(170, 170, 170);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: rgb(89, 89, 89);
+    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -35px;
+}
+
+body.dark-mode {
+    background-color: black ;
+    color: rgb(170, 170, 170);
+}
+
+#toggle-theme {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    padding: 6px;
+    background-color:rgb(229, 229, 229);
+    border-radius: 5px;
+    border-color: white;
+    position: absolute;
+    right: 60px;
+    top: 110px;
+    cursor: pointer;
+}
+
+#toggle-theme:hover {
+    color: red;
+}
+
+</style>
+</head>
+
+<body>
+    <h2>works by</h2>
+    <h1>Luisa Rosa Locher</h1>
+    <button id="toggle-theme"> Dark Mode </button>
+    <div class="accordion-item">
+        <div class="accordion-header">Body Space Motion Things: first semester project</div>
+        <div class="accordion-content">
+            <img src="dropdown-image-1st-semester 2.JPG" alt="model image" class="dropdown-image" >
+            <button id="showmore-button1"> show more </button>
+            <p>Looking at architecture through the lens of play was the approach of this studio. Unfolding spatial imagination and innovation trough playful interaction with our surroundings was the goal. The studio began with a choreography of movements, which were then translated into a series of models. Incorporating the aspect of interaction, we further developed our ideas and experiments into a final ‚playobject‘. These individual objects were then arranged in a grid structure and further developed to interact with each other to form a continuous playscape.</p>
+            <div id="slideshow-modal1" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="slideshow-container">
+                        <div class="slide">
+                                <div class="numbertext">1 / 6</div>
+                                <img src="1st_semester_slide_1.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">2 / 6</div>
+                            <img src="1st_semester_slide_2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">3 / 6</div>
+                            <img src="1st_semester_slide_3.JPG" alt="Slide 3">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">4 / 6</div>
+                            <img src="1st_semester_slide_4.jpg" alt="Slide 4">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">5 / 6</div>
+                            <img src="1st_semester_slide_5.jpg" alt="Slide 5">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">6 / 6</div>
+                            <img src="1st_semester_slide_6.jpg" alt="Slide 6">
+                        </div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="accordion-item">
+        <div class="accordion-header">Notes on Concert Halls and Chamber Music Rooms: second semester project</div>
+        <div class="accordion-content">
+            <img src="dropdown-image-2nd-semester 3.jpg" alt="rendered image" class="dropdown-image" >
+            <button id="showmore-button2"> show more </button>
+            <p>Concert halls are like large overcoats. Cut not for one, but for many. Concert halls are a singular species of space. Firstly, their size is not measured in square meters. Their unit of measurement is a chair with a certain-sized volume of air. Concert halls, like horses, often come in herds. In different sizes and qualities. Concert halls – contemporary or not - descend from other times. The task of this studio was to designing a building site for a concert house and the concert house itself as a group as well as desgning a concert hall with a specific amount of seats within the concert house individually. This project was done in cooperation with: Liselotte Krammer, Noah Löffler, Tim Netzband and Prajna Manandhar</p>
+            <div id="slideshow-modal2" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="slideshow-container">
+                        <div class="slide">
+                                <div class="numbertext">1 / 5</div>
+                                <img src="2nd_semester_slide_1.jpeg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="2nd_semester_slide_2.jpeg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="2nd_semester_slide_3.jpg" alt="Slide 3">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="2nd_semester_slide_4.jpeg" alt="Slide 4">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="2nd_semester_slide_5.png" alt="Slide 5">
+                        </div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-header">Riverrun - Let the Wienfluss Out to Play: third semester project</div>
+        <div class="accordion-content">
+            <img src="dropdown-image-3rd-semester 2.jpg" alt="model image" class="dropdown-image" >
+            <button id="showmore-button3"> show more </button>
+            <p>Wienfluss is the river that gave Vienna its name and then disappeared. Since the early 1800s, the Wienfluss has been increasingly reined in, its banks consolidated, bricked and concreted. And then in the late 1800s, using extreme measures, it was built over, enclosed and hidden from view. This studio started from the premise that expelling water from the city is a mistake. On the contrary, with temperatures rising all over the world and water supplies diminishing, cities need to retain all the water they can and urgently. We investigated methods of retaining the water of the Wienfluss, rendering it more visible and letting it out to play.</p>
+            <div id="slideshow-modal3" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="slideshow-container">
+                        <div class="slide">
+                                <div class="numbertext">1 / 6</div>
+                                <img src="3rd_semester_slide_1.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">2 / 6</div>
+                            <img src="3rd_semester_slide_2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">3 / 6</div>
+                            <img src="3rd_semester_slide_3.jpg" alt="Slide 3">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">4 / 6</div>
+                            <img src="3rd_semester_slide_4.jpg" alt="Slide 4">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">5 / 6</div>
+                            <img src="3rd_semester_slide_5.jpg" alt="Slide 5">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">6 / 6</div>
+                            <img src="3rd_semester_slide_6.jpg" alt="Slide 6">
+                        </div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-header">The Comission: fourth semester project</div>
+        <div class="accordion-content">
+            <img src="dropdown-image-4th-semester.jpeg" alt="rendered image" class="dropdown-image" >
+            <button id="showmore-button4"> show more </button>
+            <p>„I am approaching you with a somewhat crazy idea and am very keen on your feedback... I am the head of the Research Institute of Wildlife Ecology (FIWI) at the University of Veterinary Medicine, Vienna... After a tragic accident involving a former student who had emigrated to Australia, we were named as heirs. In total, we inherited just over 600,000 euros... As the director of the institute, I am responsible for the inheritance... my idea was that we could perhaps create a completely sustainable accommodation facility on our wonderful site (45 hectares owned by the City of Vienna), which could then be used as short-term accommodation for international guests on sabbatical... The hope is, of course, that we can create something that everyone would like to live in... Could you imagine that this project might be something for you, your colleagues and students?... Yours sincerely, Claudia Bieber“</p>
+            <div id="slideshow-modal4" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="slideshow-container">
+                        <div class="slide">
+                                <div class="numbertext">1 / 5</div>
+                                <img src="4th_semester_slide_1.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="4th_semester_slide_2.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="4th_semester_slide_3.jpg" alt="Slide 3">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="4th_semester_slide_4.jpg" alt="Slide 4">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="4th_semester_slide_5.jpg" alt="Slide 5">
+                        </div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-header">160x200 - a study on bedscapes: free work</div>
+        <div class="accordion-content">
+            <img src="dropdown-image-free-work.jpg" alt="image" class="dropdown-image" >
+            <button id="showmore-button5"> show more </button>
+            <p>Ich liege im Bett. Das Bett denkt mich. Es ist weich, dass ich nicht weiss, ob ich falle oder ob es mich hält. Das Bett, letzte Hülle, das die verzweifeltsten Schreie auffängt vor draussen. Letzte Hülle, durch die nur das Du treten kann. Weich gezeichnet jede Nacht von all den stillen Schreien und sanftem Sein, all dem Körper, all dem Schlaf. Darin liege ich und forme mit jeder Bewegung eine unendliche Vielzahl an Landschaften, nackt liege ich in einer, wenn ich nicht mehr dort bin; alles steht noch. Das fotografiere ich. Mehrmals. Die Geschichte ist alles, was dazwischensteht. Analog festgehalten, um nur zu beobachten, nicht einzugreifen. Aus Neugier habe ich es trotzdem getan; habe darauf gemalt und bereute es dann, denn ich verdeckte dabei, worum es mir ging. Also wusch ich es aufgelöst weg und holte, was schon dahinter lag, hervor. Wahrheit ist Unverborgenheit.</p>
+            <p>english translation: I am laying in my bed. The bed thinks me. It is so soft that I am not sure whether I fall or I‘m held. The bed, the last shell that catches the most desperate cries from going outside. The last shell through which only you can step. Softly marked every night by all the silent cries and gentle being, all the body, all the sleep. In here I lie and form an infinite variety of landscapes with every movement. Naked I lie in one when I am no longer there; everything is still as it was. I take pictures of it. Several times. The story is everything in between. Captured in analog form, only to observe, not to intervene. Out of curiosity, I did it anyway; I painted on them and then regretted it, because I covered up what it was all about. So I washed the paint away and brought out what was behind it. Truth is unconcealment.</p>
+            <div id="slideshow-modal5" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="slideshow-container">
+                        <div class="slide">
+                                <div class="numbertext">1 / 5</div>
+                                <img src="Free_work_slide_0.jpg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">2 / 5</div>
+                            <img src="Free_work_slide_1.jpg" alt="Slide 2">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">3 / 5</div>
+                            <img src="Free_work_slide_2.jpg" alt="Slide 3">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">4 / 5</div>
+                            <img src="Free_work_slide_3.jpg" alt="Slide 4">
+                        </div>
+                        <div class="slide">
+                            <div class="numbertext">5 / 5</div>
+                            <img src="Free_work_slide_4.jpg" alt="Slide 5">
+                        </div>
+                        <a class="prev">&#10094;</a>
+                        <a class="next">&#10095;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">© Luisa Rosa Locher 2024</div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.accordion-header');
+        
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+        
+                    // Toggle content visibility
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        
+                    // Optional: Close other sections
+                    headers.forEach(h => {
+                        if (h !== header) {
+                            h.nextElementSibling.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        
+            // Functionality for the first modal
+            const modal1 = document.getElementById('slideshow-modal1');
+            const closeButton1 = modal1.querySelector('.close-button');
+            const showMoreButton1 = document.querySelector('#showmore-button1');
+        
+            function openModal1() {
+                modal1.style.display = 'flex';
+                showSlide(slides1, slideIndex1);
+            }
+        
+            function closeModal1() {
+                modal1.style.display = 'none';
+            }
+        
+            showMoreButton1.addEventListener('click', openModal1);
+            closeButton1.addEventListener('click', closeModal1);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal1) {
+                    closeModal1();
+                }
+            });
+        
+            // Functionality for the second modal
+            const modal2 = document.getElementById('slideshow-modal2');
+            const closeButton2 = modal2.querySelector('.close-button');
+            const showMoreButton2 = document.querySelector('#showmore-button2');
+        
+            function openModal2() {
+                modal2.style.display = 'flex';
+                showSlide(slides2, slideIndex2);
+            }
+        
+            function closeModal2() {
+                modal2.style.display = 'none';
+            }
+        
+            showMoreButton2.addEventListener('click', openModal2);
+            closeButton2.addEventListener('click', closeModal2);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal2) {
+                    closeModal2();
+                }
+            });
+
+            // Functionality for the third modal
+            const modal3 = document.getElementById('slideshow-modal3');
+            const closeButton3 = modal3.querySelector('.close-button');
+            const showMoreButton3 = document.querySelector('#showmore-button3');
+        
+            function openModal3() {
+                modal3.style.display = 'flex';
+                showSlide(slides3, slideIndex3);
+            }
+        
+            function closeModal3() {
+                modal3.style.display = 'none';
+            }
+        
+            showMoreButton3.addEventListener('click', openModal3);
+            closeButton3.addEventListener('click', closeModal3);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal3) {
+                    closeModal3();
+                }
+            });
+
+            // Functionality for the fourth modal
+            const modal4 = document.getElementById('slideshow-modal4');
+            const closeButton4 = modal4.querySelector('.close-button');
+            const showMoreButton4 = document.querySelector('#showmore-button4');
+        
+            function openModal4() {
+                modal4.style.display = 'flex';
+                showSlide(slides4, slideIndex4);
+            }
+        
+            function closeModal4() {
+                modal4.style.display = 'none';
+            }
+        
+            showMoreButton4.addEventListener('click', openModal4);
+            closeButton4.addEventListener('click', closeModal4);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal4) {
+                    closeModal4();
+                }
+            });
+
+            // Functionality for the fifth modal
+            const modal5 = document.getElementById('slideshow-modal5');
+            const closeButton5 = modal5.querySelector('.close-button');
+            const showMoreButton5 = document.querySelector('#showmore-button5');
+        
+            function openModal5() {
+                modal5.style.display = 'flex';
+                showSlide(slides5, slideIndex5);
+            }
+        
+            function closeModal5() {
+                modal5.style.display = 'none';
+            }
+        
+            showMoreButton5.addEventListener('click', openModal5);
+            closeButton5.addEventListener('click', closeModal5);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal5) {
+                    closeModal5();
+                }
+            });
+        
+            // Shared slideshow functionality
+            let slideIndex1 = 0;
+            let slideIndex2 = 0;
+            let slideIndex3 = 0;
+            let slideIndex4 = 0;
+            let slideIndex5 = 0;
+        
+            const slides1 = modal1.querySelectorAll('.slide');
+            const slides2 = modal2.querySelectorAll('.slide');
+            const slides3 = modal3.querySelectorAll('.slide');
+            const slides4 = modal4.querySelectorAll('.slide');
+            const slides5 = modal5.querySelectorAll('.slide');
+        
+            const prev1 = modal1.querySelector('.prev');
+            const next1 = modal1.querySelector('.next');
+            const prev2 = modal2.querySelector('.prev');
+            const next2 = modal2.querySelector('.next');
+            const prev3 = modal3.querySelector('.prev');
+            const next3 = modal3.querySelector('.next');
+            const prev4 = modal4.querySelector('.prev');
+            const next4 = modal4.querySelector('.next');
+            const prev5 = modal5.querySelector('.prev');
+            const next5 = modal5.querySelector('.next');
+        
+        
+            function showSlide(slides, index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = i === index ? 'block' : 'none';
+                });
+            }
+        
+            function updateIndexAndShow(slides, indexUpdater, currentIndex) {
+                const newIndex = indexUpdater(currentIndex, slides.length);
+                showSlide(slides, newIndex);
+                return newIndex;
+            }
+        
+            prev1.addEventListener('click', () => {
+                slideIndex1 = updateIndexAndShow(slides1, (current, length) => (current - 1 + length) % length, slideIndex1);
+            });
+        
+            next1.addEventListener('click', () => {
+                slideIndex1 = updateIndexAndShow(slides1, (current, length) => (current + 1) % length, slideIndex1);
+            });
+        
+            prev2.addEventListener('click', () => {
+                slideIndex2 = updateIndexAndShow(slides2, (current, length) => (current - 1 + length) % length, slideIndex2);
+            });
+        
+            next2.addEventListener('click', () => {
+                slideIndex2 = updateIndexAndShow(slides2, (current, length) => (current + 1) % length, slideIndex2);
+            });
+
+            prev3.addEventListener('click', () => {
+                slideIndex3 = updateIndexAndShow(slides3, (current, length) => (current - 1 + length) % length, slideIndex3);
+            });
+        
+            next3.addEventListener('click', () => {
+                slideIndex3 = updateIndexAndShow(slides3, (current, length) => (current + 1) % length, slideIndex3);
+            });
+
+            prev4.addEventListener('click', () => {
+                slideIndex4 = updateIndexAndShow(slides4, (current, length) => (current - 1 + length) % length, slideIndex4);
+            });
+        
+            next4.addEventListener('click', () => {
+                slideIndex4 = updateIndexAndShow(slides4, (current, length) => (current + 1) % length, slideIndex4);
+            });
+
+            prev5.addEventListener('click', () => {
+                slideIndex5 = updateIndexAndShow(slides5, (current, length) => (current - 1 + length) % length, slideIndex5);
+            });
+        
+            next5.addEventListener('click', () => {
+                slideIndex5 = updateIndexAndShow(slides5, (current, length) => (current + 1) % length, slideIndex5);
+            });
+
+            // Initialize first slide visibility
+            showSlide(slides1, slideIndex1);
+            showSlide(slides2, slideIndex2);
+            showSlide(slides3, slideIndex3);
+            showSlide(slides4, slideIndex4);
+            showSlide(slides4, slideIndex5);
+        });
+
+        const toggleButton = document.getElementById('toggle-theme');
+        toggleButton.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+    </script>
+</body>
+</html>
